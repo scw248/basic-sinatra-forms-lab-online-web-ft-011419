@@ -3,9 +3,6 @@ require 'sinatra/base'
 class App < Sinatra::Base
 
   get "/newteam" do
-  end
-  
-  post "/team" do
     @team_name = params["name"]
     @coach = params["coach"]
     @point_guard = params["pg"]
@@ -13,6 +10,10 @@ class App < Sinatra::Base
     @power_forward = params["pf"]
     @small_forward = params["sf"]
     @center = params["c"]
+  end
+  
+  post "/team" do
+    
     erb :team
   end
   
